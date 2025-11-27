@@ -1,36 +1,37 @@
-Mapping Locations in Around the World in 80 Days
-Data Science Research Project – Final Repository
+# Mapping Locations in *Around the World in 80 Days*
 
-This repository contains all code, data, and outputs for my project “Mapping Locations in Classic Novels Using Named Entity Recognition.”
-The goal of the project is to extract, validate, classify, and map geographic locations mentioned in Jules Verne’s Around the World in 80 Days using NLP and transformer models.
+This repository contains all data and code used for my Data Science Research Project, where I extract, validate, classify, and map locations mentioned in Jules Verne’s *Around the World in 80 Days* using NLP and transformer models.
 
-Repository Structure
+## Repository Structure
 
-1. data/
+### 1. data/
+This folder contains all datasets required for the workflow:
+- around_world_80_days.csv — cleaned novel text split by chapters.
+- cities15000.txt — GeoNames database used to validate city names.
+- sentence_city_pairs.xlsx — manually labelled ground-truth test data.
+- synthetic_training_improved.xlsx — synthetic training dataset for the classification models.
 
-Contains all datasets used in the workflow:
+### 2. clean_book.R
+Retrieves the novel from Project Gutenberg and performs all preprocessing (metadata removal, chapter detection, formatting).  
+Run this file first if you want to regenerate the cleaned text.
 
-- around_world_80_days.csv — cleaned novel text split by chapters (from gutenbergr).
+### 3. ner_extraction_and_validation.ipynb
+Runs three NER models (spaCy Small, spaCy RoBERTa, Hugging Face BERT), extracts location entities, and validates them against the GeoNames database.  
+Outputs a validated list of cities and sentence–city pairs.
 
-- cities15000.txt — GeoNames database file for validating extracted city names.
+### 4. journey_classification_and_mapping.ipynb
+Trains the classification models (BERT and RoBERTa) using the synthetic dataset, predicts visited vs. mentioned cities, performs geocoding, and generates the final ordered journey.
 
-- sentence_city_pairs.xlsx — manually labelled ground-truth dataset for evaluation.
+### 5. around_the_world_journey_map.html
+The final interactive Folium map showing the reconstructed journey.  
+Download and open in any browser to view.
 
-- synthetic_training_improved.xlsx — synthetic training data used for fine-tuning classification models.
+## How to Run
+1. (Optional) Run `clean_book.R` if you wish to re-download and clean the novel.
+2. Run `ner_extraction_and_validation.ipynb` to extract and validate all locations.
+3. Run `journey_classification_and_mapping.ipynb` to classify visited cities and generate the final map.
+4. Open `around_the_world_journey_map.html` in your browser to explore the journey.
 
-2. clean_book.R
-
-Retrieves the raw novel from Project Gutenberg and performs preprocessing, metadata removal, and chapter segmentation.
-
-3. ner_extraction_and_validation.ipynb
-
-Applies three NER models (spaCy Small, spaCy RoBERTa, Hugging Face BERT) and validates extracted location names against the GeoNames database.
-
-4. journey_classification_and_mapping.ipynb
-
-Trains BERT and RoBERTa classifiers on synthetic data, predicts visited vs. mentioned cities, geocodes locations, and generates the final ordered journey.
-
-5. around_the_world_journey_map.html
-
-Interactive Folium map showing the reconstructed route taken in the novel.
-(Download + open in browser to explore.)
+## Notes
+- All code used in the final report is included here.
+- Data required for running the notebooks is contained in the `data/` folder.
