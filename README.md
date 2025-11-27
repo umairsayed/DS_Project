@@ -26,7 +26,7 @@ Trains the classification models (BERT and RoBERTa) using the synthetic dataset,
 The final interactive Folium map showing the reconstructed journey.  
 Download and open in any browser to view.
 
-### 6. environment.yml
+### 6. environment.yaml
 Conda environment file used for this project.
 Can be used to recreate the exact environment used to run all notebooks.
 
