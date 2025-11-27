@@ -26,11 +26,19 @@ Trains the classification models (BERT and RoBERTa) using the synthetic dataset,
 The final interactive Folium map showing the reconstructed journey.  
 Download and open in any browser to view.
 
+### 6. environment.yml
+Conda environment file used for this project.
+Can be used to recreate the exact environment used to run all notebooks.
+
 ## How to Run
-1. (Optional) Run `clean_book.R` if you wish to re-download and clean the novel.
-2. Run `ner_extraction_and_validation.ipynb` to extract and validate all locations.
-3. Run `journey_classification_and_mapping.ipynb` to classify visited cities and generate the final map.
-4. Open `around_the_world_journey_map.html` in your browser to explore the journey.
+1. To recreate the environment and run the notebooks, create the Conda environment:
+    ```
+    conda env create -f environment.yml
+    ```
+2. (Optional) Run `clean_book.R` if you wish to re-download and clean the novel.
+3. Run `ner_extraction_and_validation.ipynb` to extract and validate all locations.
+4. Run `journey_classification_and_mapping.ipynb` to classify visited cities and generate the final map.
+5. Open `around_the_world_journey_map.html` in your browser to explore the journey.
 
 ## Notes
 - All code used in the final report is included here.
