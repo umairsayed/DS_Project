@@ -1,15 +1,15 @@
 # Mapping Locations in *Around the World in 80 Days*
 
-This repository contains all data and code used for my Data Science Research Project, where I extract, validate, classify, and map locations mentioned in Jules Verne’s *Around the World in 80 Days* using NLP and transformer models.
+This repository contains all data and code used to extract, validate, classify, and map geographic locations mentioned in Jules Verne’s *Around the World in 80 Days* using NLP and transformer models.
 
 ## Repository Structure
 
 ### 1. data/
 This folder contains all datasets required for the workflow:
-- around_world_80_days.csv — cleaned novel text split by chapters.
-- cities15000.txt — GeoNames database used to validate city names.
-- sentence_city_pairs.xlsx — manually labelled ground-truth test data.
-- synthetic_training_improved.xlsx — synthetic training dataset for the classification models.
+- around_world_80_days.csv --> cleaned novel text split by chapters.
+- cities15000.txt --> GeoNames database used to validate city names.
+- sentence_city_pairs.xlsx --> manually labelled ground-truth test data.
+- synthetic_training_improved.xlsx --> synthetic training dataset for the classification models.
 
 ### 2. clean_book.R
 Retrieves the novel from Project Gutenberg and performs all preprocessing (metadata removal, chapter detection, formatting).  
@@ -17,7 +17,7 @@ Run this file first if you want to regenerate the cleaned text.
 
 ### 3. ner_extraction_and_validation.ipynb
 Runs three NER models (spaCy Small, spaCy RoBERTa, Hugging Face BERT), extracts location entities, and validates them against the GeoNames database.  
-Outputs a validated list of cities and sentence–city pairs.
+Outputs a validated list of cities and sentence-city pairs.
 
 ### 4. journey_classification_and_mapping.ipynb
 Trains the classification models (BERT and RoBERTa) using the synthetic dataset, predicts visited vs. mentioned cities, performs geocoding, and generates the final ordered journey.
