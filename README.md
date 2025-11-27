@@ -31,7 +31,7 @@ Conda environment file used for this project.
 Can be used to recreate the exact environment used to run all notebooks.
 
 ## How to Run
-1. To recreate the environment and run the notebooks, create the Conda environment:
+1. To recreate the environment and run the notebooks, create the Conda environment and activate it:
     ```
     conda env create -f environment.yaml
     ```
