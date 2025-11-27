@@ -33,7 +33,7 @@ Can be used to recreate the exact environment used to run all notebooks.
 ## How to Run
 1. To recreate the environment and run the notebooks, create the Conda environment:
     ```
-    conda env create -f environment.yml
+    conda env create -f environment.yaml
     ```
 2. (Optional) Run `clean_book.R` if you wish to re-download and clean the novel.
 3. Run `ner_extraction_and_validation.ipynb` to extract and validate all locations.
