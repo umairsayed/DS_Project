@@ -41,5 +41,4 @@ Can be used to recreate the exact environment used to run all notebooks.
 5. Open `around_the_world_journey_map.html` in your browser to explore the journey.
 
 ## Notes
-- All code used in the final report is included here.
 - Data required for running the notebooks is contained in the `data/` folder.
